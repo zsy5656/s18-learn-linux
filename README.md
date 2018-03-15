@@ -3,8 +3,11 @@
 ## Team Members
 
 Andrew Samuels
+
 Connor Roulliard
+
 Shuyang Zhao
+
 Ben Golden
 
 ## Description
