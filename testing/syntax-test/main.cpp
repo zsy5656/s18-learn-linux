@@ -1,9 +1,9 @@
 #include "mainwindow.h"
 #include <QApplication>
-#include <srchiliteqt/TextEditHighlighted.h>
 #include <QDebug>
 #include <QFile>
 #include <QFileInfo>
+#include <srchiliteqt/TextEditHighlighted.h>
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
