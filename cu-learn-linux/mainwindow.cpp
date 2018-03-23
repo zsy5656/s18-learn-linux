@@ -6,6 +6,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->editor->loadFile(":resources/viewport.cpp");
 }
 
 MainWindow::~MainWindow()
