@@ -10,10 +10,12 @@ int main(int argc, char *argv[])
     MainWindow w;
     //QWidget* widget = new QWidget();
     QTermWidget *console = new QTermWidget();
+    console->changeDir("~/");
     w.setCentralWidget(console);
-    qDebug() << "Colors: " << console->availableKeyBindings();
+    qDebug() << a.applicationDirPath();
     console->setColorScheme("DarkPastels");
-    //QObject::connect(console, SIGNAL(finished()), w, SLOT(close()));
+    w.connect(console, SIGNAL(finished()), SLOT(close()));
+    w.resize(800,500);
     w.show();
 
     return a.exec();
