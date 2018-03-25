@@ -34,7 +34,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QWidget" name="editor" native="true">
+   <widget class="TextEditHighlighted" name="editor">
     <property name="geometry">
      <rect>
       <x>660</x>
@@ -61,7 +61,7 @@
      <x>0</x>
      <y>0</y>
      <width>1035</width>
-     <height>25</height>
+     <height>23</height>
     </rect>
    </property>
   </widget>
@@ -76,6 +76,13 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>TextEditHighlighted</class>
+   <extends>QTextEdit</extends>
+   <header>srchiliteqt/TextEditHighlighted.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
