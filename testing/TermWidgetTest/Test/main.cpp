@@ -8,14 +8,15 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     MainWindow w;
-    //QWidget* widget = new QWidget();
     QTermWidget *console = new QTermWidget();
-    console->changeDir("~/");
     w.setCentralWidget(console);
+    console->setWorkingDirectory("/");
+    console->setEnvironment(QStringList("linux"));
     qDebug() << a.applicationDirPath();
     console->setColorScheme("DarkPastels");
     w.connect(console, SIGNAL(finished()), SLOT(close()));
     w.resize(800,500);
+    console->changeDir("~/");
     w.show();
 
     return a.exec();
