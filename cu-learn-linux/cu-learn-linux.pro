@@ -19,12 +19,20 @@ HEADERS  += mainwindow.h
 
 FORMS    += mainwindow.ui
 
+
+RESOURCES += \
+    resources.qrc
+
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/srchiliteqt/release/ -lsource-highlight-qt4
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/srchiliteqt/debug/ -lsource-highlight-qt4
 else:unix: LIBS += -L$$PWD/srchiliteqt/ -lsource-highlight-qt4
 
-INCLUDEPATH += $$PWD/srchiliteqt $$PWD/qtermwidget
-DEPENDPATH += $$PWD/srchiliteqt $$PWD/qtermwidget
+INCLUDEPATH += $$PWD/srchiliteqt
+DEPENDPATH += $$PWD/srchiliteqt
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/srchiliteqt/release/ -lsource-highlight-qt4
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/srchiliteqt/debug/ -lsource-highlight-qt4
+else:unix: LIBS += -L$$PWD/srchiliteqt/ -lsource-highlight-qt4
 
 win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/srchiliteqt/release/libsource-highlight-qt4.a
 else:win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/srchiliteqt/debug/libsource-highlight-qt4.a
@@ -32,14 +40,9 @@ else:win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/sr
 else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/srchiliteqt/debug/source-highlight-qt4.lib
 else:unix: PRE_TARGETDEPS += $$PWD/srchiliteqt/libsource-highlight-qt4.a
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/srchiliteqt/release/ -lsource-highlight-qt4
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/srchiliteqt/debug/ -lsource-highlight-qt4
-else:unix: LIBS += -L$$PWD/srchiliteqt/ -lsource-highlight-qt4
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/qtermwidget4/release/ -lqtermwidget4
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/qtermwidget4/debug/ -lqtermwidget4
+else:unix: LIBS += -L$$PWD/qtermwidget4/ -lqtermwidget4
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/qtermwidget/release/ -lqtermwidget5
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/qtermwidget/debug/ -lqtermwidget5
-else:unix: LIBS += -L$$PWD/qtermwidget/ -lqtermwidget5
-
-
-RESOURCES += \
-    resources.qrc
+INCLUDEPATH += $$PWD/qtermwidget4
+DEPENDPATH += $$PWD/qtermwidget4

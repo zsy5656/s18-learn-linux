@@ -44,7 +44,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QWidget" name="console" native="true">
+   <widget class="QTermWidget" name="console" native="true">
     <property name="geometry">
      <rect>
       <x>660</x>
@@ -61,7 +61,7 @@
      <x>0</x>
      <y>0</y>
      <width>1035</width>
-     <height>23</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>
@@ -81,6 +81,12 @@
    <class>TextEditHighlighted</class>
    <extends>QTextEdit</extends>
    <header>srchiliteqt/TextEditHighlighted.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QTermWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">qtermwidget4/qtermwidget.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources/>
