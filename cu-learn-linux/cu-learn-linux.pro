@@ -19,6 +19,7 @@ HEADERS  += mainwindow.h
 
 FORMS    += mainwindow.ui
 
+LIBS += -lqtermwidget4 -lsource-highlight-qt4
 
 RESOURCES += \
     resources.qrc

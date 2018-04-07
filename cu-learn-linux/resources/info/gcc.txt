@@ -1,0 +1,23 @@
+--What is a compiler?
+In computer science, writing and executing programs is a huge part of many classes. A compiler converts a written program into an executable file, which cannot be edited, but can be run by the computer. If there are any errors associated with your file that the compiler can identify, it will print an error report so that you can go back into the source code and correct your mistakes. If you are used to using an IDE, such as Eclipse or Codeblocks, think of this as the equivalent of the ‘build’ option.
+
+--specifying output files
+When compiling C programs, using the gcc compiler is as easy as typing
+
+    gcc main.c
+
+This will give you the executable a.out, which can be executed using the command ./a.out . However, for organizational purposes, you will always want to give your executable file a relevant name. This is as simple as adding -o [name] to the end of the command, for example:
+
+    gcc main.c -o main
+
+The output file in this case would be named main and can be executed easily by the command ./main .
+
+-- -Wall
+Whenever you compile a program, you should aim for returning no errors from the compiler to make sure it runs properly. A good habit to develop is using the -Wall flag when compiling, so that you can get a more verbose error report for your program. For example:
+
+    gcc -Wall main.c -o main
+
+This command will attempt to compile the program and return any and all errors it can find.
+
+--time
+If you’re curious about the runtime of your program, using the time command when executing it is the most efficient way to do so. Typing time ./main for executable main will put out the total runtime of the program so that you can see precisely how efficiently it runs.

@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QTreeView" name="treeView">
+   <widget class="QTreeWidget" name="treeWidget">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -23,8 +23,38 @@
       <height>561</height>
      </rect>
     </property>
+    <column>
+     <property name="text">
+      <string>Modules</string>
+     </property>
+    </column>
+    <item>
+     <property name="text">
+      <string>Navigation</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>gcc</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Makefiles</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>gdb</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Text Editors</string>
+     </property>
+    </item>
    </widget>
-   <widget class="QTextBrowser" name="textBrowser">
+   <widget class="QTextEdit" name="information">
     <property name="geometry">
      <rect>
       <x>230</x>
@@ -34,7 +64,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QTextEdit" name="editor">
+   <widget class="TextEditHighlighted" name="editor">
     <property name="geometry">
      <rect>
       <x>660</x>
@@ -44,7 +74,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QWidget" name="console" native="true">
+   <widget class="QTermWidget" name="console" native="true">
     <property name="geometry">
      <rect>
       <x>660</x>
@@ -76,6 +106,22 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>TextEditHighlighted</class>
+   <extends>QTextEdit</extends>
+   <header location="global">srchiliteqt/TextEditHighlighted.h</header>
+   <slots>
+    <slot>loadResource()</slot>
+   </slots>
+  </customwidget>
+  <customwidget>
+   <class>QTermWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">qtermwidget4/qtermwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
