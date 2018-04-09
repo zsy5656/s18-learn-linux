@@ -19,7 +19,7 @@ HEADERS  += mainwindow.h
 
 FORMS    += mainwindow.ui
 
-LIBS += -L"/usr/local/lib" -llibqtermwidget4 -lsource-highlight-qt4
+LIBS += -L"/usr/local/lib" -lqtermwidget4 -lsource-highlight-qt4
 
 RESOURCES += \
     resources.qrc

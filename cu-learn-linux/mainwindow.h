@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QFile>
 #include <QTextStream>
+#include <qtermwidget4/qtermwidget.h>
 
 namespace Ui {
 class MainWindow;
@@ -19,6 +20,7 @@ public slots:
 
 public:
     explicit MainWindow(QWidget *parent = 0);
+    const QTermWidget* getConsole();
     ~MainWindow();
 
 

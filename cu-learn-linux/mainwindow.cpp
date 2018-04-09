@@ -1,25 +1,34 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QProcess>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    QStringList env = QProcess::systemEnvironment();
     ui->setupUi(this);
     ui->editor->loadFile(":resources/examples/viewport.cpp");
 
     connect(ui->treeWidget, SIGNAL(clicked(QModelIndex)), this, SLOT(setInformation()));
     connect(ui->treeWidget, SIGNAL(clicked(QModelIndex)), this, SLOT(setResource()));
 
-
-
-
+    env << "TERM=xterm";
+    ui->console->setEnvironment(env);
+    ui->console->startShellProgram();
+    ui->console->setColorScheme("DarkPastels");
+    ui->console->changeDir("~/");
+    connect(ui->console, SIGNAL(finished()), this, SLOT(close()));
 
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+const QTermWidget* MainWindow::getConsole(){
+    return ui->console;
 }
 
 void MainWindow::setResource(){
