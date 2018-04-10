@@ -1,4 +1,6 @@
---Using Gedit:
+<h1>Using Gedit:</h1>
 Gedit is a program built into Ubuntu allowing for editing of text. This program works very similarly to a document editor like Microsoft Word or Google Docs, in that it includes intuitive commands like ctrl-c and ctrl-v, and allows for full mouse control. Writing a program in Gedit, like most editors, requires just a simple command:
+
     gedit [filename]
+
 This will make a new file or open an existing file in Gedit. Just remember to save your work before closing out, and use gedit [filename] & if you want to run commands while gedit is open.

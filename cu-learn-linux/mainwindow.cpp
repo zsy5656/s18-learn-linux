@@ -12,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connect(ui->treeWidget, SIGNAL(clicked(QModelIndex)), this, SLOT(setInformation()));
     connect(ui->treeWidget, SIGNAL(clicked(QModelIndex)), this, SLOT(setResource()));
+    connect(ui->treeWidget, SIGNAL(clicked(QModelIndex)), this, SLOT(setTerminal()));
 
     env << "TERM=xterm";
     ui->console->setEnvironment(env);
@@ -19,16 +20,13 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->console->setColorScheme("DarkPastels");
     ui->console->changeDir("~/");
     connect(ui->console, SIGNAL(finished()), this, SLOT(close()));
+    QMetaObject::invokeMethod(ui->console, "clear");
 
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
-}
-
-const QTermWidget* MainWindow::getConsole(){
-    return ui->console;
 }
 
 void MainWindow::setResource(){
@@ -55,6 +53,32 @@ void MainWindow::setResource(){
     }
 }
 
+void MainWindow::setTerminal(){
+    QString option = ui->treeWidget->currentItem()->text(0);
+
+    if(option == "Navigation"){
+        ui->console->changeDir("~/Documents");
+    }
+
+    if(option == "gcc"){
+        ui->console->changeDir("~/Documents");
+    }
+
+    if(option == "Makefiles"){
+        ui->console->changeDir("~/Documents");
+    }
+
+    if(option == "gdb"){
+        ui->console->changeDir("~/Documents");
+    }
+
+    if(option == "Text Editors"){
+        ui->console->changeDir("~/Documents");
+    }
+    QMetaObject::invokeMethod(ui->console, "clear");
+}
+
+
 void MainWindow::loadInformation(QString filename){
     QFile file(filename);
 
@@ -65,7 +89,7 @@ void MainWindow::loadInformation(QString filename){
         QTextStream stream(&file);
         while(!stream.atEnd()){
             line = stream.readLine();
-            ui->information->setText(ui->information->toPlainText()+line+"\n");
+            ui->information->setText(ui->information->toHtml()+line+"\n");
         }
 
     }
@@ -77,6 +101,10 @@ void MainWindow::setInformation(){
     QString option = ui->treeWidget->currentItem()->text(0);
 
     if(option == "Navigation"){
+//        QFile file(":resources/info/navigation.html");
+//        file.open(QFile::ReadWrite);
+//        QTextStream stream(&file);
+//        ui->information->setHtml(stream.readAll());
         loadInformation(":resources/info/navigation.txt");
     }
 

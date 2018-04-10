@@ -1,20 +1,20 @@
---ls: show all sub directories
+<h1>ls: show all sub directories</h1>
 
 If you’re used to using a GUI such as Windows to navigate files, using the terminal may be intimidating because you can’t always see what your options are when navigating. By using ls, you can see all of the files and subdirectories located in your current directory. (if you use Windows or another visual OS, think of directories as folders) Using ls followed by a filename will display the contents of that file as well, for example ls ~ will always display the contents of your home directory, and ls .. will always display the contents of the previous directory. If you want to check the contents of a directory not in your current directory, use the format ls [target]/[subdirectory]/[sub-subdirectory]/[etc.]
 
 Tip: ~ always means your home directory, while .. always means the parent directory, or directory the current directory belongs to. This applies to other commands, not just ls!
 
---cd: move to directory
+<h2>cd: move to directory</h2>
 The command cd allows you to move your current directory to a new location. For example, using cd and typing in the name of a subdirectory of your current directory. (remember: use ls to check the names subdirectories of your current directory!) cd works much like ls; cd .. will take you to the parent directory, and cd ~ will take you to the home directory.
 
---mkdir: new directory
+<h2>mkdir: new directory</h2>
 Making a new subdirectory is as simple as typing mkdir [directory name]. This will add an empty subdirectory to your current directory. This command works much like ls and cd; for example using mkdir ~/[name] will make a subdirectory in the home directory, and so on.
 
---cp: copy
+<h2>cp: copy</h2>
 Copying a file to a new directory in the terminal can be done quickly with the command cp [filename] [targetDirectory]. If you wish to rename the file that is being copied, just add the new name to the end of the command, i.e.: cp [oldName] [target] [newName]. Note that for directories, use cp -r to copy a subdirectory and all of its contents to a new directory.
 
---rm: delete (remove)
+<h2>rm: delete (remove)</h2>
 Deleting a file uses the command rm [filename]. This command works similar to cp, in that it works only for files and not for directories. Use rm -r to delete a subdirectory and all of its contents.
 
---cat: display contents of file
+<h2>cat: display contents of file</h2>
 Using cat allows you to display a file’s contents directly to the terminal. This may be simpler than using a text editor if you only want to read the contents of a short text file, for example.

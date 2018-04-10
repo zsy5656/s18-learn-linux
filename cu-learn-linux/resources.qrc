@@ -1,12 +1,12 @@
-<!DOCTYPE RCC><RCC version="1.0">
-	<qresource>
-		<file>resources/examples/gcc.c</file>
-		<file>resources/examples/viewport.cpp</file>
-		<file>resources/examples/Makefile</file>
-		<file>resources/examples/navigation.txt</file>
-		<file>resources/info/editors.txt</file>
-		<file>resources/info/navigation.txt</file>
-		<file>resources/info/gcc.txt</file>
-		<file>resources/info/makefiles.txt</file>
-	</qresource>
+<RCC>
+    <qresource prefix="/">
+        <file>resources/examples/gcc.c</file>
+        <file>resources/examples/viewport.cpp</file>
+        <file>resources/examples/Makefile</file>
+        <file>resources/examples/navigation.txt</file>
+        <file>resources/info/editors.txt</file>
+        <file>resources/info/navigation.txt</file>
+        <file>resources/info/gcc.txt</file>
+        <file>resources/info/makefiles.txt</file>
+    </qresource>
 </RCC>

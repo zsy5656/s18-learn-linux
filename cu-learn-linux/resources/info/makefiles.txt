@@ -1,3 +1,3 @@
---What is a Makefile?
+<h1>What is a Makefile?</h1>
 A makefile is a text file containing compiler commands, which gets sent to the program make, which simplifies the process of using the compiler to compile and link your program. The file will usually be saved in a document simply named Makefile (exact case, no file extensions) since using this name is highly recommended by GNU. If you are given a makefile along with code for a program, you can typically compile it by just typing make into the command line. A good habit to develop is typing make clean before typing make again to clear out extra files and avoid errors.
 

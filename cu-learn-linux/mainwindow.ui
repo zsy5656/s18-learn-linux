@@ -6,12 +6,33 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1035</width>
-    <height>618</height>
+    <width>1045</width>
+    <height>624</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>CU Learn Linux</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#centralWidget {
+	background-color: rgb(85, 170, 255);
+}
+
+QTextEdit#information {
+	background-color: white;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: 5px;
+}
+
+QTreeWidget{
+	background-color: white;
+}
+
+QMenuBar {
+	background-color: black;
+	color: white;
+}</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QTreeWidget" name="treeWidget">
@@ -22,6 +43,32 @@
       <width>231</width>
       <height>561</height>
      </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>300</width>
+      <height>16777215</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Laksaman</family>
+      <pointsize>14</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QHeaderView {
+	background-color: rgb(85, 170, 255);
+	font-family: Laksaman;
+	font-size: 14pt;
+	font-weight: bold;
+}
+QTreeWidget {
+	margin-left: 5px;
+	margin-top: 5px;
+}</string>
     </property>
     <column>
      <property name="text">
@@ -63,8 +110,24 @@
       <height>561</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">font-family: Laksaman;
+font-size: 10;</string>
+    </property>
+    <property name="verticalScrollBarPolicy">
+     <enum>Qt::ScrollBarAsNeeded</enum>
+    </property>
+    <property name="sizeAdjustPolicy">
+     <enum>QAbstractScrollArea::AdjustIgnored</enum>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
    </widget>
    <widget class="TextEditHighlighted" name="editor">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>660</x>
@@ -72,6 +135,24 @@
       <width>381</width>
       <height>281</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QFrame {
+	background-color: rgb(85, 170, 255)
+}
+
+QTextEdit {
+	background-color: white;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding-right: 10px;
+}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Sunken</enum>
     </property>
    </widget>
    <widget class="QTermWidget" name="console" native="true">
@@ -90,10 +171,28 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1035</width>
+     <width>1045</width>
      <height>19</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuHelp"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
